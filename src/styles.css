@@ -1,0 +1,122 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-bias-left: var(--bias-left);
+  --color-bias-lean-left: var(--bias-lean-left);
+  --color-bias-center: var(--bias-center);
+  --color-bias-lean-right: var(--bias-lean-right);
+  --color-bias-right: var(--bias-right);
+
+  --color-rel-causal: var(--rel-causal);
+  --color-rel-temporal: var(--rel-temporal);
+  --color-rel-thematic: var(--rel-thematic);
+
+  --color-topic-politics: var(--topic-politics);
+  --color-topic-economics: var(--topic-economics);
+  --color-topic-sports: var(--topic-sports);
+  --color-topic-world: var(--topic-world);
+  --color-topic-tech: var(--topic-tech);
+  --color-topic-lifestyle: var(--topic-lifestyle);
+  --color-topic-health: var(--topic-health);
+  --color-topic-entertainment: var(--topic-entertainment);
+  --color-topic-editorial: var(--topic-editorial);
+  --color-topic-academia: var(--topic-academia);
+
+  --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Dark data-journalism palette (Bloomberg-ish) */
+  --background: oklch(0.16 0.012 250);
+  --foreground: oklch(0.96 0.005 250);
+  --card: oklch(0.20 0.013 250);
+  --card-foreground: oklch(0.96 0.005 250);
+  --popover: oklch(0.20 0.013 250);
+  --popover-foreground: oklch(0.96 0.005 250);
+  --primary: oklch(0.78 0.16 75);          /* amber/Bloomberg accent */
+  --primary-foreground: oklch(0.18 0.015 250);
+  --secondary: oklch(0.26 0.015 250);
+  --secondary-foreground: oklch(0.96 0.005 250);
+  --muted: oklch(0.24 0.013 250);
+  --muted-foreground: oklch(0.70 0.015 250);
+  --accent: oklch(0.30 0.02 250);
+  --accent-foreground: oklch(0.96 0.005 250);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.30 0.015 250);
+  --input: oklch(0.28 0.015 250);
+  --ring: oklch(0.78 0.16 75);
+
+  /* Bias spectrum */
+  --bias-left: oklch(0.62 0.22 255);
+  --bias-lean-left: oklch(0.70 0.14 245);
+  --bias-center: oklch(0.72 0.01 250);
+  --bias-lean-right: oklch(0.70 0.16 30);
+  --bias-right: oklch(0.62 0.23 25);
+
+  /* Relation types */
+  --rel-causal: oklch(0.65 0.22 25);
+  --rel-temporal: oklch(0.65 0.18 245);
+  --rel-thematic: oklch(0.55 0.015 250);
+
+  /* Briefing accent (warm gold) */
+  --briefing-gold: oklch(0.78 0.14 80);
+
+  /* Topic categories */
+  --topic-politics:      oklch(0.72 0.18 300);
+  --topic-economics:     oklch(0.78 0.16 75);
+  --topic-sports:        oklch(0.74 0.18 30);
+  --topic-world:         oklch(0.72 0.17 145);
+  --topic-tech:          oklch(0.72 0.16 195);
+  --topic-lifestyle:     oklch(0.78 0.12 340);
+  --topic-health:        oklch(0.74 0.15 165);
+  --topic-entertainment: oklch(0.72 0.18 320);
+  --topic-editorial:     oklch(0.70 0.10 60);
+  --topic-academia:      oklch(0.74 0.14 245);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
